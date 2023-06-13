@@ -6,22 +6,24 @@
     /* CSS Here */
     body {
       font-family: Arial, sans-serif;
-      background-color: #c0c0c0;
       margin: 0;
       padding: 20px;
-      background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
+      background-image: url("background.PNG");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed
     }
     h1 {
       text-align: center;
-      color:rgb(0, 0, 0);
+      color:rgb(253, 176, 51);
     }
-
     .trade-container {
       display: flex;
       justify-content: space-around;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
-      background-color: #ffffff;
+      background:linear-gradient(to Bottom, rgb(126, 186, 255), rgb(255, 200, 118));
       padding: 20px;
       border-radius: 5px;
     }
@@ -31,6 +33,8 @@
     ul {
       list-style-type: none;
       padding: 0;
+      font-size: 21px;
+      font-family: "Consolas";
     }
     li {
       margin-bottom: 5px;
@@ -41,28 +45,29 @@
     }
     button {
       padding: 8px 16px;
-      background-color: #4CAF50;
+      background-color: #188da7;
       color: #ffffff;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 21px;
     }
     .search-bar {
       margin-bottom: 10px;
     }
 
     .highlight {
-      background-color: rgb(0, 0, 0);
+      background-color: rgb(50, 18, 18);
     }
     .amount-input {
-      width: 40px;
+      width: 45px;
       margin-left: 10px;
+      font-size: 17px;
     }
   </style>
 </head>
 <body>
-  <h1 style="font-size: 50px;">PStVVerifier</h1>
-
+  <h1 style="font-size: 50px;color:#09d2ff;">PStVVerifier</h1>
   <div class="trade-container">
     <div class="give-section">
       <h2 style="width: 190px;">Items you Give</h2>
@@ -72,7 +77,6 @@
       <ul id="give-list">
       </ul>
     </div>
-
     <div class="get-section">
       <h2 style="width: 190px;">Items you Get</h2>
       <div class="search-bar">
@@ -81,26 +85,24 @@
       <ul id="get-list">
       </ul>
     </div>
-
     <div class="result-section",style >
-      <h2 style="font-size: 25px;">Trade Result</h2>
+      <h2 style="font-size: 30px;">Trade Result</h2>
       <p id="trade-result" style="font-size: 25px;"></p>
       <button id="calculate-button">Calculate Trade</button>
-      <p style="font-weight:bold;">"Give" items in worth of Ores</p>
-      <p id="give-items-worth", style="font-size:20px;">0</p>
-      <p style="font-weight:bold;">"Get" items in worth of Ores</p>
-      <p id="get-items-worth", style="font-size: 20px;">0</p>
+      <p style="font-weight:bold;font-size:18px;">"Give" items in worth of Ores</p>
+      <p id="give-items-worth", style="font-size:25px;font-weight: bold;">0</p>
+      <p style="font-weight:bold;font-size:18px;">"Get" items in worth of Ores</p>
+      <p id="get-items-worth", style="font-size: 25px;font-weight: bold">0</p>
     </div>
   </div>
   <h1>Some champion items MIGHT be incorrect price</h1>
-
   <script>
-    
-    alert("PLEASE READ!!!: Hello, welcome to Project Slayers trading Value Verifier (PStVVerifier)! This website is made by MehPropy and with the help of my friend for the item value. You can use this website to determine if the trade you are doing in Project Slayers is Good, Fair or Bad. Some items (mostly champion items) MIGHT be incorrect value since they are hard to get and people that trade them will almost always have different needs. Most of the items (such as most necklesses) have been removed due to people just not trading them. If you want to contact me for correcting the values or adding an item, add me on discord: MehPropy#3787. Enjoy!")
-    // Item objects with names and ore amount
+    // Fucking alert
+    alert("PLEASE READ!!!: Hello, welcome to Project Slayers trading Value Verifier (PStVVerifier)! This website is made by MehPropy and with the help of my friend for the item value. You can use this website to determine if the trade you are doing in Project Slayers is Good, Fair or Bad. Some items (mostly champion items) MIGHT be incorrect value since they are hard to get and people that trade them will almost always have different needs. Most of the items (such as most necklesses) have been removed due to people just not trading them. If you want to contact me for correcting the values or adding, add me on discord: MehPropy#3787. Enjoy!")
+    // Names and Ore amounts
     const items = [ 
       { name: 'Ore', points: 1 },
-      { name: 'War Fans', points: 20 },
+      { name: 'War Fans', points: 19 }, // War Fans nerfed
       { name: 'Beast Katanas', points: 5 },
       { name: 'Bone Claws', points: 5 },
       { name: 'Butterfly Katana', points: 5 },
@@ -172,8 +174,7 @@
         getList.appendChild(getItem);
       });
     }
-
-    // Create CheckBox at item
+    // Making CheckBoxes
     function createListItem(itemName, section) {
       const listItem = document.createElement('li');
 
