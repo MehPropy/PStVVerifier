@@ -1,0 +1,75 @@
+/* CSS Here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url("background.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed
+}
+h1  {
+    text-align: center;
+    color:rgb(253, 176, 51);
+}
+.trade-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: 0 auto;
+    background:linear-gradient(to Bottom, rgb(126, 186, 255), rgb(255, 200, 118));
+    padding: 20px;
+    border-radius: 5px;
+}
+.trade-container h2 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 21px;
+    font-family: "Consolas";
+}
+li {
+    margin-bottom: 5px;
+}
+.result-section {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    padding: 8px 16px;
+    background-color: #188da7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 21px;
+}
+.search-bar {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background-color: rgb(0,0,0);
+}
+.amount-input {
+    width: 32px;
+    margin-left: 10px;
+    font-size: 17px;
+}
+#po{
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #146b9d;
+}
+#trade-fair, #trade-good,#trade-bad{
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(155, 114, 0);
+}
+#notice {
+    background-color: rgb(205, 49, 10);
+}
