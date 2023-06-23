@@ -212,11 +212,11 @@ function mobileMode() {
 
 // How to use
 function notice() {
-    alert("Hello, welcome to Project Slayers trading Value Verifier (PStVVerifier)! This website is made by MehPropy and with the help of my friend for the item value. You can use this website to determine if the trade you are doing in Project Slayers is Good, Fair or Bad. Some items (mostly champion items) MIGHT be incorrect value since they are hard to get and people that trade them will almost always have different needs. Most of the items (such as most necklesses) have been removed due to people just not trading them. If you want to contact me for correcting the values or adding the items, add me on discord: mehpropy.")
-    alert("You can check the checkboxes at the item in the 'Give' and 'Get' sections and with clicking 'Calculate Trade' the program will calculate the trade based on Ores")
-    alert("Please keep in mind that 'Good' trade dosen't mean that the trade is a fair trade, it simply means you get more than you give")
-    alert("Same goes for 'Bad', it means you give more than get")
-    alert("You also have text boxes at every item, it is for putting the amount of the item")
-    alert("That's it, enjoy!")
-    alert("Oh and by the way, you can just see how much item is worth by just clicking 'Calculate trade' when selecting one item")
+  alert("Hello, welcome to Project Slayers trading Value Verifier (PStVVerifier)! This website is made by MehPropy and with the help of my friend for the item value. You can use this website to determine if the trade you are doing in Project Slayers is Good, Fair or Bad. Some items (mostly champion items) MIGHT be incorrect value since they are hard to get and people that trade them will almost always have different needs. Most of the items (such as most necklesses) have been removed due to people just not trading them. If you want to contact me for correcting the values or adding the items, add me on discord: mehpropy.")
+  alert("You can check the checkboxes at the item in the 'Give' and 'Get' sections and with clicking 'Calculate Trade' the program will calculate the trade based on Ores")
+  alert("Please keep in mind that 'Good' trade dosen't mean that the trade is a fair trade, it simply means you get more than you give")
+  alert("Same goes for 'Bad', it means you give more than get")
+  alert("You also have text boxes at every item, it is for putting the amount of the item")
+  alert("That's it, enjoy!")
+  alert("Oh and by the way, you can just see how much item is worth by just clicking 'Calculate trade' when selecting one item")
 }
