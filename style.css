@@ -7,37 +7,45 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed
+    background-attachment: fixed;
 }
-h1  {
+
+h1 {
     text-align: center;
-    color:rgb(253, 176, 51);
+    color: rgb(253, 176, 51);
 }
+
 .trade-container {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
     justify-content: space-around;
     max-width: 1100px;
     margin: 0 auto;
-    background:linear-gradient(to Bottom, rgb(126, 186, 255), rgb(255, 200, 118));
+    background: linear-gradient(to bottom, rgb(126, 186, 255), rgb(255, 200, 118));
     padding: 20px;
     border-radius: 5px;
 }
+
 .trade-container h2 {
     text-align: center;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
     font-size: 21px;
     font-family: "Consolas";
 }
+
 li {
     margin-bottom: 5px;
 }
+
 .result-section {
     text-align: center;
     margin-top: 20px;
 }
+
 button {
     padding: 8px 16px;
     background-color: #188da7;
@@ -47,29 +55,61 @@ button {
     cursor: pointer;
     font-size: 21px;
 }
+
 .search-bar {
     margin-bottom: 10px;
 }
 
 .highlight {
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
 }
+
 .amount-input {
     width: 32px;
     margin-left: 10px;
     font-size: 17px;
+    border: 0;
 }
-#po{
+
+#po {
     font-size: 19px;
     font-weight: bold;
     text-decoration: underline;
     color: #146b9d;
 }
-#trade-fair, #trade-good,#trade-bad{
+
+#trade-fair,
+#trade-good,
+#trade-bad {
     font-size: 20px;
     font-weight: bolder;
     color: rgb(155, 114, 0);
 }
+
 #notice {
     background-color: rgb(205, 49, 10);
+}
+/*For those who actually fucking read this
+Added screen max width
+Fixed mobile mode
+it was kind of a wack, now its better*/
+
+@media screen and (max-width: 600px) {
+    /* Styles for mobile devices */
+    .trade-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+    
+    ul {
+        font-size: 15px; /* Decrease font size for smaller screens */
+    }
+    
+    .amount-input {
+        width: 20px; /* Adjust the width of the amount input for smaller screens */
+    }
+    
+    .search-bar {
+        text-align: center; /* Center the search bar for smaller screens */
+    }
 }
