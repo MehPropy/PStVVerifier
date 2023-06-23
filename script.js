@@ -1,6 +1,6 @@
 // Names and Ore amounts
 const items = [ 
-    { name: 'Ore', points: 1 },
+      { name: 'Ore', points: 1 },
       { name: 'Champion Mask', points: 500 },
       { name: 'Champion Scarf', points: 500 },
       { name: 'Champion Haorie', points: 500 },
@@ -11,7 +11,7 @@ const items = [
       { name: 'Akaza Top', points: 400 },
       { name: 'Enmu Bottom', points: 380 },
       { name: 'Enmu Top', points: 380 },
-      { name: 'Samurai Maidens Amigasa', points: 250 },
+      { name: 'Samurai M. Amigasa', points: 250 }, // Shortend the name since it took like half of the fucking screen
       { name: 'Devourer Bottom', points: 200 },
       { name: 'Sealed Box', points: 120 },
       { name: 'Rengoku Haorie', points: 75 },
@@ -31,7 +31,7 @@ const items = [
       { name: 'Sound Katanas', points: 15 },
       { name: 'Polar Top', points: 15 },
       { name: 'Orbed Glacier', points: 14 },
-      { name: 'Black Bamnoo Amigasa', points: 10 },
+      { name: 'Black B. Amigasa', points: 10 }, // Typo removed
       { name: 'Devourer Mask', points: 10 },
       { name: 'Douma Top', points: 10 },
       { name: 'Beast Katanas', points: 5 },
@@ -136,24 +136,29 @@ function calculateTrade() {
 }
 
 // Filter and highlight based on search
+// This has been updated so the search is now much better and its much easier on the eyes
 function filterItems(inputId, listId) {
   const input = document.getElementById(inputId);
   const filter = input.value.toLowerCase();
   const list = document.getElementById(listId);
   const items = list.getElementsByTagName('li');
-  const AmountInput = document.getElementById("amount-input")
 
   Array.from(items).forEach(item => {
     const itemName = item.textContent.toLowerCase();
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    const amountInput = item.querySelector('.amount-input');
 
     if (itemName.includes(filter)) {
       item.classList.remove('highlight');
+      checkbox.style.backgroundColor = '';
+      amountInput.style.backgroundColor = '';
     } else {
       item.classList.add('highlight');
+      checkbox.style.backgroundColor = 'black';
+      amountInput.style.backgroundColor = 'black';
     }
   });
 }
-
 populateLists();
 
 const calculateButton = document.getElementById('calculate-button');
@@ -169,34 +174,43 @@ getSearchInput.addEventListener('input', function () {
   filterItems('get-search-input', 'get-list');
 });
 
+// As i said, mobile mode fixed
 function mobileMode() {
-    const ps = document.getElementsByTagName("p");
-    const ul = document.getElementsByTagName("ul");
-    const buttons = document.getElementsByTagName("button");
-    const inputs = document.getElementsByTagName("input");
-    const h2s = document.getElementsByTagName("h2")
-    const searchGive = document.getElementById("give-search-input")
-    const searchGet = document.getElementById("get-search-input")
-  
-    for (var i = 0; i < ul.length; i++) {
-      ul[i].style.fontSize = "15px";
-    }
-    for (var i = 0; i < ps.length; i++) {
-      ps[i].style.fontSize = "15px";
-    }
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].style.fontSize = "15px";
-    }
-    for (var i = 0; i < inputs.length; i++) {
-      inputs[i].style.fontSize = "10px";
-      inputs[i].style.width = "20px";
-    }
-    for (var i = 0; i < h2s.length; i++) {
-        h2s[i].style.fontSize = "15px";
-    }
-    searchGive.style.width = "100px";
-    searchGet.style.width = "100px";
+  const ps = document.getElementsByTagName("p");
+  const ul = document.getElementsByTagName("ul");
+  const buttons = document.getElementsByTagName("button");
+  const inputs = document.getElementsByTagName("input");
+  const h2s = document.getElementsByTagName("h2");
+  const searchGive = document.getElementById("give-search-input");
+  const searchGet = document.getElementById("get-search-input");
+
+  for (var i = 0; i < ul.length; i++) {
+    ul[i].style.fontSize = "15px";
+  }
+  for (var i = 0; i < ps.length; i++) {
+    ps[i].style.fontSize = "15px";
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].style.fontSize = "15px";
+  }
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].style.fontSize = "25px";
+    inputs[i].style.width = "30px";
+  }
+  for (var i = 0; i < h2s.length; i++) {
+    h2s[i].style.fontSize = "15px";
+  }
+  searchGive.style.width = "100px";
+  searchGet.style.width = "100px";
+
+  // Scaled checkboxes
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    checkbox.style.transform = "scale(1.5)"; // Adjust the scale factor as needed
+  });
 }
+
+// How to use
 function notice() {
     alert("Hello, welcome to Project Slayers trading Value Verifier (PStVVerifier)! This website is made by MehPropy and with the help of my friend for the item value. You can use this website to determine if the trade you are doing in Project Slayers is Good, Fair or Bad. Some items (mostly champion items) MIGHT be incorrect value since they are hard to get and people that trade them will almost always have different needs. Most of the items (such as most necklesses) have been removed due to people just not trading them. If you want to contact me for correcting the values or adding the items, add me on discord: mehpropy.")
     alert("You can check the checkboxes at the item in the 'Give' and 'Get' sections and with clicking 'Calculate Trade' the program will calculate the trade based on Ores")
